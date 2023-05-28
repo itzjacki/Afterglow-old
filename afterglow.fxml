@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- AUTHOR: Jakob Endrestad Kielland -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyListener" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="afterglowJar.GameController">
+   <children>
+      <Arc centerX="400.0" centerY="400.0" fill="#7b078c" length="90.0" radiusX="50.0" radiusY="50.0" startAngle="45.0" stroke="#00a1db00" strokeType="OUTSIDE" strokeWidth="10.0" type="ROUND">
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Bloom>
+                     <input>
+                        <GaussianBlur radius="2.67" />
+                     </input>
+                  </Bloom>
+               </input>
+            </Glow>
+         </effect>
+      </Arc>
+      <Arc centerX="400.0" centerY="400.0" fill="#7b078c" length="90.0" radiusX="50.0" radiusY="50.0" startAngle="135.0" stroke="#00a1db00" strokeType="OUTSIDE" strokeWidth="10.0" type="ROUND">
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Bloom>
+                     <input>
+                        <GaussianBlur radius="2.67" />
+                     </input>
+                  </Bloom>
+               </input>
+            </Glow>
+         </effect>
+      </Arc>
+      <Arc centerX="400.0" centerY="400.0" fill="#7b078c" length="90.0" radiusX="50.0" radiusY="50.0" startAngle="225.0" stroke="#00a1db00" strokeType="OUTSIDE" strokeWidth="10.0" type="ROUND">
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Bloom>
+                     <input>
+                        <GaussianBlur radius="2.67" />
+                     </input>
+                  </Bloom>
+               </input>
+            </Glow>
+         </effect>
+      </Arc>
+      <Arc centerX="400.0" centerY="400.0" fill="#7b078c" length="90.0" radiusX="50.0" radiusY="50.0" startAngle="315.0" stroke="#00a1db00" strokeType="OUTSIDE" strokeWidth="10.0" type="ROUND">
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Bloom>
+                     <input>
+                        <GaussianBlur radius="2.67" />
+                     </input>
+                  </Bloom>
+               </input>
+            </Glow>
+         </effect>
+      </Arc>
+      <Arc fx:id="playerPiece" centerX="400.0" centerY="400.0" fill="#00a2dd" length="90.0" radiusX="50.0" radiusY="50.0" startAngle="45.0" stroke="#00a1db00" strokeType="OUTSIDE" strokeWidth="10.0" type="ROUND">
+         <effect>
+            <Glow level="0.92">
+               <input>
+                  <Bloom threshold="0.0" />
+               </input>
+            </Glow>
+         </effect></Arc>
+      <Text fx:id="comboDisplay" fill="#ec07c6" layoutX="664.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="RIGHT" wrappingWidth="100.0">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+      </Text>
+      <Text fill="#ff00c3" layoutX="684.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x" textAlignment="RIGHT" wrappingWidth="99.99499320983887">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Glow level="0.42" />
+               </input>
+            </Glow>
+         </effect>
+      </Text>
+      <Text fill="#ff00c3" layoutX="537.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" wrappingWidth="115.47004699707031">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Glow level="0.42" />
+               </input>
+            </Glow>
+         </effect>
+      </Text>
+      <Text fx:id="scoreDisplay" fill="#ff00c3" layoutX="612.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="171.36636459827423">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+      </Text>
+      <Text fill="#ff00c3" layoutX="21.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Health: " wrappingWidth="115.47004699707031">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Glow level="0.42" />
+               </input>
+            </Glow>
+         </effect>
+      </Text>
+      <Text fx:id="healthDisplay" fill="#ff00c3" layoutX="127.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT" wrappingWidth="53.033021092414856">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+      </Text>
+      <Text fill="#ff00c3" layoutX="184.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" wrappingWidth="39.77476358413696">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Glow level="0.42" />
+               </input>
+            </Glow>
+         </effect>
+      </Text>
+      <Text fill="#ff00c3" layoutX="537.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Combo:" wrappingWidth="115.47004699707031">
+         <font>
+            <Font name="Agency FB" size="45.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Glow level="0.42" />
+               </input>
+            </Glow>
+         </effect>
+      </Text>
+      <Button layoutX="722.0" layoutY="749.0" mnemonicParsing="false" onAction="#endGameButton" prefHeight="37.0" prefWidth="64.0" style="-fx-background-color: black; -fx-border-color: #ff00c3; -fx-border-width: 2; -fx-border-radius: 5;" text="End run" textAlignment="CENTER" textFill="#ff00c3">
+         <font>
+            <Font name="Agency FB" size="14.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <Bloom threshold="0.61" />
+               </input>
+            </Glow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Pane fx:id="startPane" onMouseClicked="#startGame" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="#00d0ff" layoutX="89.0" layoutY="208.0" stroke="#ff009d00" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" text="Afterglow" textAlignment="CENTER" wrappingWidth="641.2001953125">
+               <font>
+                  <Font name="Agency FB" size="150.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.38" topOffset="-10.0" topOpacity="0.2">
+                     <input>
+                        <Glow level="1.0" />
+                     </input></Reflection>
+               </effect>
+            </Text>
+            <Text fill="#ff00c3" layoutX="186.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Controls: Arrow keys or WASD" textAlignment="CENTER" wrappingWidth="448.494140625">
+               <font>
+                  <Font name="Agency FB" size="47.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fill="#ff00c3" layoutX="142.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Objective: Catch the orbs by facing them when they reach the center" textAlignment="CENTER" wrappingWidth="535.4941482543945">
+               <font>
+                  <Font name="Agency FB" size="47.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fill="#00d0ff" layoutX="225.0" layoutY="640.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[click anywhere to start]" textAlignment="CENTER">
+               <font>
+                  <Font name="Agency FB" size="47.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="endPane" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: black; visibility: false;">
+         <children>
+            <Text fx:id="endTitle" fill="#00d0ff" layoutX="-7.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afterglow" textAlignment="CENTER" wrappingWidth="813.328125">
+               <font>
+                  <Font name="Agency FB" size="96.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fill="#ff00c3" layoutX="127.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" wrappingWidth="148.494140625">
+               <font>
+                  <Font name="Agency FB" size="72.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fx:id="endScore" fill="#ff00c3" layoutX="293.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="291.3281321525574">
+               <font>
+                  <Font name="Agency FB" size="72.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fill="#ff00c3" layoutX="127.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accuracy:" wrappingWidth="332.494140625">
+               <font>
+                  <Font name="Agency FB" size="72.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Text fx:id="endAccuracy" fill="#ff00c3" layoutX="331.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00.00" textAlignment="RIGHT" wrappingWidth="250.494140625">
+               <font>
+                  <Font name="Agency FB" size="72.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Button layoutX="225.0" layoutY="517.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="138.0" prefWidth="350.0" style="-fx-background-color: black; -fx-border-color: #00d0ff; -fx-border-width: 5; -fx-border-radius: 20;" text="Restart" textAlignment="CENTER" textFill="#00d0ff">
+               <font>
+                  <Font name="Agency FB" size="64.0" />
+               </font>
+               <effect>
+                  <Glow level="0.26">
+                     <input>
+                        <Bloom threshold="0.61" />
+                     </input>
+                  </Glow>
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Text fill="#ff00c3" layoutX="588.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\%" wrappingWidth="53.03301811218262">
+               <font>
+                  <Font name="Agency FB" size="72.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Text>
+            <Button layoutX="325.0" layoutY="689.0" mnemonicParsing="false" onAction="#toggleAbout" prefHeight="56.0" prefWidth="150.0" style="-fx-background-color: black; -fx-border-color: #00d0ff; -fx-border-width: 5; -fx-border-radius: 20;" text="About" textAlignment="CENTER" textFill="#00d0ff">
+               <font>
+                  <Font name="Agency FB" size="30.0" />
+               </font>
+               <effect>
+                  <Glow level="0.26">
+                     <input>
+                        <Bloom threshold="0.61" />
+                     </input>
+                  </Glow>
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="aboutPane" prefHeight="800.0" prefWidth="800.0" style="visibility: false;">
+         <children>
+            <Pane layoutX="150.0" layoutY="200.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #111111; -fx-background-radius: 20; -fx-border-color: #00d0ff; -fx-border-radius: 20; -fx-border-width: 4;">
+               <children>
+                  <Text fill="#00d0ff" layoutX="57.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author: Jakob Endrestad Kielland Music: Noma - Brain Power        Dev High score: 22 723 000" wrappingWidth="386.13671875">
+                     <font>
+                        <Font name="Agency FB Bold" size="34.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.8" />
+                     </effect>
+                  </Text>
+                  <Button layoutX="169.0" layoutY="288.0" mnemonicParsing="false" onAction="#toggleAbout" prefHeight="56.0" prefWidth="163.0" style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-color: #00d0ff; -fx-border-width: 5; -fx-border-radius: 20;" text="Back" textAlignment="CENTER" textFill="#00d0ff">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.37" />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children></Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
